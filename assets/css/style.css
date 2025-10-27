@@ -1,10 +1,31 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-header{
+header {
     background-image: url(../img/wall.png);
     background-size: cover;
+}
+
+.sfondo {
+    background-image: url(../img/cork.png);
+    min-height: 100vh;
+}
+
+.card {
+    padding: 10px 10px 30px 10px;
+}
+
+.puntina {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background: rgb(212, 82, 82);
+
 }
