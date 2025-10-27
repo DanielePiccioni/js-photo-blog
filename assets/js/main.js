@@ -14,7 +14,7 @@ fetch(api)
         // ciclo tutte le foto
         data.forEach(photo => {
             const col = document.createElement("div");
-            col.className = "col-12 col-sm-6 col-md-4";
+            col.className = "col-12 col-sm-6 col-lg-4";
             col.innerHTML = `
     <div class="card shadow position-relative">
       <div class="puntina"></div>
