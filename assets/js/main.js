@@ -21,7 +21,7 @@ fetch(api)
       <img src="${photo.url}" class="w-100" alt="${photo.title}">
       <div class="text-center" style="font-family: 'Sometype Mono', monospace;">
         <p class="text-dark mb-1">${photo.date}</p>
-        <p class="card-text fst-italic small">${photo.title}</p>
+        <p class="card-text fst-italic fw-bold fs-5">${photo.title}</p>
       </div>
     </div>`
             container.appendChild(col);
