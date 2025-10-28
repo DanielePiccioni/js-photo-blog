@@ -6,16 +6,16 @@ const container = document.getElementById("photo-container");
 
 //chiamata API con fetch
 fetch(api)
-    .then(response => response.json())
-    .then(data => {
-        console.log(data.length);
-        // svuoto il contenitore prima di inserire le card
-        container.innerHTML = "";
-        // ciclo tutte le foto
-        data.forEach(photo => {
-            const col = document.createElement("div");
-            col.className = "col-12 col-sm-6 col-lg-4";
-            col.innerHTML = `
+  .then(response => response.json())
+  .then(data => {
+    console.log(data.length);
+    // svuoto il contenitore prima di inserire le card
+    container.innerHTML = "";
+    // ciclo tutte le foto
+    data.forEach(photo => {
+      const col = document.createElement("div");
+      col.className = "col-12 col-sm-6 col-lg-4";
+      col.innerHTML = `
     <div class="card shadow position-relative">
       <div class="puntina"></div>
       <img src="${photo.url}" class="w-100" alt="${photo.title}">
@@ -24,6 +24,21 @@ fetch(api)
         <p class="card-text fst-italic fw-bold fs-5">${photo.title}</p>
       </div>
     </div>`
-            container.appendChild(col);
-        });
-    })
+      container.appendChild(col);
+    });
+
+    const overlay = document.getElementById("overlay");
+    const closeBtn = document.getElementById("close-btn");
+
+    // al click apre l'immagine  selezionata
+    container.addEventListener("click", function (evento) {
+      if (evento.target.tagName === "IMG") {
+        overlay.querySelector("img").src = evento.target.src;
+        overlay.classList.remove("hidden");
+      }
+    });
+    // clic di chiudi chiude l'immagine
+    closeBtn.addEventListener("click", function () {
+      overlay.classList.add("hidden");
+    });
+  })

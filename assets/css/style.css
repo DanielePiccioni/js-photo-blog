@@ -42,3 +42,7 @@ header {
   left: 0;
   top: 0;
 }
+
+#overlay.hidden {
+  display: none;
+}
